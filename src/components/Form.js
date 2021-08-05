@@ -3,6 +3,16 @@ import Slider from './Slider';
 
 const FormComponent = (props) => {
   const [amount, setAmount] = useState('10,000');
+  const coins = [
+    {
+      name: 'USDC',
+      price: 1.0,
+    },
+    {
+      name: 'ETH',
+      price: 2709.81,
+    },
+  ];
   return (
     <fieldset>
       <form>
@@ -23,7 +33,11 @@ const FormComponent = (props) => {
       </div>
       <label htmlFor='currencySelector'>Select Currency</label>
       <select name='currencySelector' id='currencySelector'>
-        map goes here
+        {coins.map((coin) => (
+          <option key={coin.name} value='{coin.value}'>
+            {coin.name} 12% APY
+          </option>
+        ))}
       </select>
       <span>
         <label htmlFor='yearly'></label>
@@ -31,6 +45,9 @@ const FormComponent = (props) => {
           <option value='1 Year'>1 year</option>
         </select>
       </span>
+      <div>
+        <Slider />
+      </div>
     </fieldset>
   );
 };
