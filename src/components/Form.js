@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import SliderComponent from './SliderComponent';
-import SelectComponent from './SelectComponent';
+import Slider from './Slider';
+import Select from './Select';
 
 const FormComponent = (props) => {};
 
